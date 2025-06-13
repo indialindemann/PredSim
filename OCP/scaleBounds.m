@@ -24,8 +24,9 @@ function [bounds] = scaleBounds(S,model_info,bounds_nsc,scaling)
 % Original author: Lars D'Hondt
 % Original date: 6/April/2023
 %
-% Last edit by:
-% Last edit date:
+% Edit to replicate Van Wouwe 2024 sprinting
+% Last edit by: India Lindemann
+% Last edit date: 13/06/2025
 % --------------------------------------------------------------------------
 
 bounds = bounds_nsc;
@@ -44,6 +45,12 @@ bounds.Qdotdots.upper(isnan(bounds.Qdotdots.upper)) = 0;
 % Muscle-tendon forces
 bounds_nsc.FTtilde.lower    = (bounds_nsc.FTtilde.lower)./scaling.FTtilde;
 bounds_nsc.FTtilde.upper    = (bounds_nsc.FTtilde.upper)./scaling.FTtilde;
+% Muscle-tendon force time derivative
+bounds.dFTtilde.lower= (bounds_nsc.dFTtilde.lower)./scaling.dFTtilde;
+bounds.dFTtilde.upper= (bounds_nsc.dFTtilde.upper)./scaling.dFTtilde;
+% Muscle activation time derivative
+bounds.vA.lower= bounds_nsc.vA.lower/scaling.vA ;
+bounds.vA.upper= bounds_nsc.vA.upper/scaling.vA ;
 
 % We impose the initial position of pelvis_tx to be 0
 bounds.Qs_0.lower = bounds.Qs.lower;

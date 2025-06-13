@@ -18,8 +18,9 @@ function [bounds_nsc] = getBounds(S,model_info)
 % Original author: Lars D'Hondt
 % Original date: 5/April/2023
 %
-% Last edit by:
-% Last edit date:
+% Edit to replicate Van Wouwe 2024 sprinting
+% Last edit by: India Lindemann
+% Last edit date: 13/06/2025
 % --------------------------------------------------------------------------
 
 
@@ -174,12 +175,12 @@ bounds_nsc.FTtilde.lower = zeros(1,NMuscle);
 bounds_nsc.FTtilde.upper = 5*ones(1,NMuscle);
 
 %% Time derivative of muscle activations
-bounds_nsc.vA.lower = (-1/100*ones(1,NMuscle))./(ones(1,NMuscle)*model_info.muscle_info.tdeact);
-bounds_nsc.vA.upper = (1/100*ones(1,NMuscle))./(ones(1,NMuscle)*model_info.muscle_info.tact);
+bounds_nsc.vA.lower = (-1*ones(1,NMuscle))./(ones(1,NMuscle)*model_info.muscle_info.tdeact);
+bounds_nsc.vA.upper = (1*ones(1,NMuscle))./(ones(1,NMuscle)*model_info.muscle_info.tact);
 
 %% Time derivative of muscle-tendon forces
-bounds_nsc.dFTtilde.lower = -1*ones(1,NMuscle);
-bounds_nsc.dFTtilde.upper = 1*ones(1,NMuscle);
+bounds_nsc.dFTtilde.lower = -100*ones(1,NMuscle);
+bounds_nsc.dFTtilde.upper = 100*ones(1,NMuscle);
 
 %% Torque actuator activations
 bounds_nsc.a_a.lower = -ones(1,model_info.ExtFunIO.jointi.nq.torqAct);

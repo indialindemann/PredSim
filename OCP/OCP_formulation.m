@@ -1356,7 +1356,7 @@ R.ground_reaction.threshold = HS_threshold;
 R.ground_reaction.initial_contact_side = HS1;
 R.ground_reaction.idx_GC = idx_GC;
 R.spatiotemp.dist_trav = dist_trav_opt;
-
+R.misc.bounds_nsc=bounds_nsc;
 % save results
 Outname = fullfile(S.misc.save_folder,[S.misc.result_filename '.mat']);
 disp(['Saving results as: ' Outname])
