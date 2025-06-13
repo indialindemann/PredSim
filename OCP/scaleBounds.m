@@ -49,8 +49,8 @@ bounds_nsc.FTtilde.upper    = (bounds_nsc.FTtilde.upper)./scaling.FTtilde;
 bounds.dFTtilde.lower= (bounds_nsc.dFTtilde.lower)./scaling.dFTtilde;
 bounds.dFTtilde.upper= (bounds_nsc.dFTtilde.upper)./scaling.dFTtilde;
 % Muscle activation time derivative
-bounds.vA.lower= bounds_nsc.vA.lower/scaling.vA ;
-bounds.vA.upper= bounds_nsc.vA.upper/scaling.vA ;
+bounds.vA.lower= bounds_nsc.vA.lower./scaling.vA ;
+bounds.vA.upper= bounds_nsc.vA.upper./scaling.vA ;
 
 % We impose the initial position of pelvis_tx to be 0
 bounds.Qs_0.lower = bounds.Qs.lower;
