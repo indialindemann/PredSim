@@ -19,12 +19,12 @@ addpath(genpath())
 %% Initialize S
 addpath(fullfile(pathRepo,'DefaultSettings'))
 
-[S] = initializeSettings('Falisse_et_al_2022_scale75');
+[S] = initializeSettings('Falisse_et_al_2022');
 
 %% Settings
 
 % name of the subject
-S.subject.name = 'Falisse_et_al_2022_scale75';
+S.subject.name = 'Falisse_et_al_2022';
 
 % path to folder where you want to store the results of the OCP
 S.misc.save_folder  = fullfile(pathRepoFolder,'PredSimResults',S.subject.name); 
@@ -136,7 +136,7 @@ for speed=[2,2.5,3,3.5,4,4.5,5,5.5,6,6.5,7,7.5,8,8.5,9]
     % Use result .mot as initial guess for next run
     IG_file_name=[savename,'.mot'];
     % add path to PredSimResults folder next line
-    S.solver.IG_selection = fullfile('C:\Users\\PredSimResults\Falisse_et_al_2022_scale75',IG_file_name);
+    S.solver.IG_selection = fullfile('C:\Users\\PredSimResults\Falisse_et_al_2022',IG_file_name);
     S.solver.IG_selection_gaitCyclePercent = 200;
 end
 
